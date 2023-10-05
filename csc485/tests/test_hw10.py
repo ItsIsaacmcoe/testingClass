@@ -1,3 +1,4 @@
+import pytest
 from csc485.projects.hw10.fruit_query import is_it_a_fruit
 
 
