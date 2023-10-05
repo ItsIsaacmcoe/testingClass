@@ -1,4 +1,4 @@
-from learningToTest.projects.hw10.fruit_query import is_it_a_fruit
+from csc485.projects.hw10.fruit_query import is_it_a_fruit
 
 
 def test_expected():
