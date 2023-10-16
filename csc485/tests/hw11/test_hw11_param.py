@@ -1,4 +1,5 @@
-from csc485.projects.hw11.get_casual_fruit import get_formal_name
+#testing revised code
+from csc485.projects.hw11.formal_fruit_revised import get_formal_name
 import pytest
 
 
