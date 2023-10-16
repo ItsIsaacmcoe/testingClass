@@ -7,7 +7,7 @@
 # Does the program work when an integer is mixed into the string?
 
 import pytest
-from csc485.projects.hw11.get_formal_fruit import get_formal_name
+from csc485.projects.hw11.formal_fruit_revised import get_formal_name
 
 
 # expected
