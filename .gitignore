@@ -1,9 +1,4 @@
 /learningToTest/.idea/
 __pycache__/
 *.pyc
-/.idea/.gitignore
-/.idea/vcs.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/modules.xml
-/.idea/misc.xml
-/.idea/dev.iml
+.idea/
