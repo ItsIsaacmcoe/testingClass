@@ -6,7 +6,6 @@
 #
 # Does the program work when an integer is mixed into the string?
 
-import pytest
 from csc485.projects.hw11.get_formal_fruit import get_formal_name
 
 
