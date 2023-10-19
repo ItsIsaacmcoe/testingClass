@@ -30,10 +30,10 @@ def get_formal_name(fruit='mango'):
 
     try:
         formal_name = fruit_dict[fruit.lower()]
-    except:
+    except (AttributeError, KeyError):
         formal_name = 'fruit not on list'
 
     return formal_name
 
-# added exception handling for key error, added default fruit in case of empty parameters
-# added capital letter stripping to remove case sensitivity
+# add exception handling for type error
+# changed error handling to be specific
