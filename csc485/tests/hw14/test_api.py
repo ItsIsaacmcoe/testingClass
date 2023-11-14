@@ -48,6 +48,7 @@ def test_app():
     assert app.app_context is not None
 
 
+@pytest.mark.live_api
 @pytest.mark.parametrize(
     'test_data,expected', [
         ('http://127.0.0.1:5000/get_strength?password=/%%/%%%%', 200),
@@ -59,6 +60,7 @@ def test_app():
          'asdfasdfasfasdfasdfasdfasdfasdfassdfasdfasdfasdfasdf', 200)
     ]
 )
+@pytest.mark.live_api
 def test_running(test_data, expected):
     r = requests.get(test_data)
     assert r.status_code == expected
