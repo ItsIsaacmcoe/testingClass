@@ -32,18 +32,38 @@ from csc485.projects.hw14.password_utilities import (compute_complexity,
 
 @pytest.mark.parametrize(
     'test_data,expected', [
-        ('test', 0), ('t~$t', 50), (1, 0), (2.2, 0), (True, 0)
+        ('test', 0), ('t~$t', 50)
     ]
 )
-def test_complexity(test_data, expected):
+def test_complexity_happy(test_data, expected):
     assert compute_complexity(test_data) == expected
 
 
 @pytest.mark.parametrize(
     'test_data,expected', [
-        ('test', False), ('t~$@t', True), (1, False),
-        (2.2, False), (True, False), ('@@@@', False)
+        (1, 0), (2.2, 0), (True, 0)
     ]
 )
-def test_strength(test_data, expected):
+def test_complexity_err(test_data, expected):
+    with pytest.raises(TypeError):
+        compute_complexity(test_data) == expected
+
+
+@pytest.mark.parametrize(
+    'test_data,expected', [
+        ('test', False), ('t~$@t', True), ('@@@@', True)
+    ]
+)
+def test_strength_happy(test_data, expected):
     assert evaluate_strength(test_data) == expected
+
+
+@pytest.mark.parametrize(
+    'test_data,expected', [
+        (1, False), (2.2, False), (True, False),
+    ]
+)
+
+def test_strength_typerror(test_data, expected):
+    with pytest.raises(TypeError):
+        evaluate_strength(test_data) == expected
