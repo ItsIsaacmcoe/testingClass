@@ -46,14 +46,24 @@ def test_complexity_happy(test_data, expected):
 )
 def test_complexity_err(test_data, expected):
     with pytest.raises(TypeError):
-        assert compute_complexity(test_data) == expected
+        compute_complexity(test_data) == expected
 
 
 @pytest.mark.parametrize(
     'test_data,expected', [
-        ('test', False), ('t~$@t', True), (1, False),
-        (2.2, False), (True, False), ('@@@@', False)
+        ('test', False), ('t~$@t', True), ('@@@@', True)
     ]
 )
-def test_strength(test_data, expected):
+def test_strength_happy(test_data, expected):
     assert evaluate_strength(test_data) == expected
+
+
+@pytest.mark.parametrize(
+    'test_data,expected', [
+        (1, False), (2.2, False), (True, False),
+    ]
+)
+
+def test_strength_typerror(test_data, expected):
+    with pytest.raises(TypeError):
+        evaluate_strength(test_data) == expected

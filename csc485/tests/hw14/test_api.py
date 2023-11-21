@@ -60,7 +60,6 @@ def test_app():
          'asdfasdfasfasdfasdfasdfasdfasdfassdfasdfasdfasdfasdf', 200)
     ]
 )
-@pytest.mark.live_api
 def test_running(test_data, expected):
     r = requests.get(test_data)
     assert r.status_code == expected

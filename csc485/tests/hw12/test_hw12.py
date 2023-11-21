@@ -10,6 +10,11 @@ tests:
     String with one number in it
 '''
 @pytest.mark.parametrize(
-    'test_data,expected', [('test', 0), ('t$st', 25), (1, 0), ('~@#', 100), ('te1st', 0)])
-def test_paths(test_data, expected):
+    'test_data,expected', [('test', 0), ('t$st', 25), ('~@#', 100), ('te1st', 0)])
+def test_happy(test_data, expected):
     assert compute_complexity(test_data) == expected
+
+
+def test_err():
+    with pytest.raises(TypeError):
+        assert compute_complexity(1)
