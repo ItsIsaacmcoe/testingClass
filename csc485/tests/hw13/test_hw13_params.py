@@ -32,11 +32,21 @@ from csc485.projects.hw13.compute_complexity import (compute_complexity,
 
 @pytest.mark.parametrize(
     'test_data,expected', [
-        ('test', 0), ('t~$t', 50), (1, 0), (2.2, 0), (True, 0)
+        ('test', 0), ('t~$t', 50)
     ]
 )
-def test_complexity(test_data, expected):
+def test_complexity_happy(test_data, expected):
     assert compute_complexity(test_data) == expected
+
+
+@pytest.mark.parametrize(
+    'test_data,expected', [
+        (1, 0), (2.2, 0), (True, 0)
+    ]
+)
+def test_complexity_err(test_data, expected):
+    with pytest.raises(TypeError):
+        assert compute_complexity(test_data) == expected
 
 
 @pytest.mark.parametrize(
