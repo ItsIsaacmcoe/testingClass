@@ -63,7 +63,6 @@ def test_strength_happy(test_data, expected):
         (1, False), (2.2, False), (True, False),
     ]
 )
-
 def test_strength_typerror(test_data, expected):
     with pytest.raises(TypeError):
         evaluate_strength(test_data) == expected

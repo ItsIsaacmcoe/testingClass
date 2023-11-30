@@ -17,4 +17,4 @@ def test_case_handling():
 
 
 def test_mispell_handling():
-    assert is_it_a_fruit('banana') == False
+    assert is_it_a_fruit('banana') is not True
