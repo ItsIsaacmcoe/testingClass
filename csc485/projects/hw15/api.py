@@ -22,7 +22,7 @@ The browser will show you the following response:
   "strength": "bad"
 }
 
-For the purposes of our testing, we use the requests package to make HTTP requests. 
+For the purposes of our testing, we use the requests package to make HTTP requests.
 You can do live exploratory testing using ipython.
 
 The commands for a GET request look like this:
